@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for our retail compliance app
+				retail: {
+					blue: '#0A3D62',
+					gray: '#34495E',
+					green: '#2ECC71',
+					red: '#E74C3C',
+					light: '#F8F9FA',
+					dark: '#2C3E50'
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,19 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-bg': {
+					'0%, 100%': { backgroundColor: 'rgba(46, 204, 113, 0.1)' },
+					'50%': { backgroundColor: 'rgba(46, 204, 113, 0.2)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-bg': 'pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif']
 			}
 		}
 	},
