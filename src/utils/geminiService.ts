@@ -16,7 +16,8 @@ interface ComplianceResult {
 
 // Use the provided API key for Gemini
 const API_KEY = 'AIzaSyD8jj6smoFRmVFPMq6i_etf8heZMTKQBv4';
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision:generateContent';
+// Update to the new API endpoint and model
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
 // Function to convert file to base64
 export const fileToBase64 = (file: File): Promise<string> => {
@@ -71,9 +72,9 @@ export const analyzeImage = async (imageFile: File): Promise<ComplianceResult> =
       }
     };
 
-    console.log('Sending request to Gemini API...');
+    console.log('Sending request to Gemini API with updated model...');
     
-    // Make the API call to Gemini
+    // Make the API call to Gemini with the updated URL
     const response = await fetch(`${GEMINI_API_URL}?key=${API_KEY}`, {
       method: 'POST',
       headers: {

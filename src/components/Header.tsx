@@ -24,7 +24,7 @@ const Header = () => {
             <h1 className="text-xl font-bold">AI Retail Compliance Validator</h1>
             <div className="flex items-center text-xs text-blue-100">
               <Sparkles className="h-3 w-3 mr-1" />
-              <p>Direct Gemini Vision Analysis</p>
+              <p>Powered by Gemini 1.5 Flash</p>
             </div>
           </div>
         </div>
