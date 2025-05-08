@@ -71,7 +71,7 @@ const ComplianceScore = ({ score, status }: ComplianceScoreProps) => {
         <motion.div 
           className={`h-full ${getProgressColor()}`}
           initial={{ width: '0%' }}
-          animate={{ width: `${score}%` }}
+          animate={{ width: `${score}` }}
           transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
         />
       </div>

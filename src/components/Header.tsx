@@ -21,7 +21,7 @@ const Header = () => {
             <Store className="h-8 w-8" />
           </motion.div>
           <div>
-            <h1 className="text-xl font-bold">AI Retail Compliance Validator</h1>
+            <h1 className="text-xl font-bold">AI-Powered Grocery Store Compliance Validator</h1>
             <div className="flex items-center text-xs text-blue-100">
               <Sparkles className="h-3 w-3 mr-1" />
               <p>Powered by Gemini 1.5 Flash</p>

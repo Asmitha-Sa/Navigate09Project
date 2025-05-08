@@ -1,73 +1,55 @@
-# Welcome to your Lovable project
+# 🛒 AI-Powered Grocery Store Compliance Validator
 
-## Project info
+A web-based AI solution to instantly evaluate supermarket and grocery store images for compliance with industry standards across 12 rule categories. It uses Google Gemini AI for advanced visual analysis and outputs a detailed compliance report with recommendations and visual feedback.
 
-**URL**: https://lovable.dev/projects/f4788ae3-b7e2-42e7-9986-6e0c1fcef7be
+## 🌟 Features
 
-## How can I edit this code?
+- 🔍 Upload grocery store images to validate compliance
+- 🧠 AI-powered analysis using Google Gemini Pro Vision
+- 📊 Generates compliance score and detailed rule-based insights
+- 📝 Visual and textual summary of violations
+- 📄 Downloadable PDF compliance report
+- ✅ Categorized rule validation (e.g., shelf stocking, checkout area, aisle arrangement)
+- 📁 Clean and intuitive UI with drag-and-drop image upload
 
-There are several ways of editing your application.
+## 📸 How It Works
 
-**Use Lovable**
+1. Upload a grocery store image.
+2. Click **"Analyze Compliance with Gemini AI"**.
+3. The app checks the image against 12 predefined retail rules (from a `rules.yaml` file).
+4. Violations are detected using both Gemini AI and object detection (YOLOv5 via Roboflow).
+5. A compliance report is generated with:
+   - Compliance status
+   - Key violations
+   - Compliance score
+   - Recommendations
+   - Optional PDF download
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f4788ae3-b7e2-42e7-9986-6e0c1fcef7be) and start prompting.
+## 🔐 Environment Variables
 
-Changes made via Lovable will be committed automatically to this repo.
+Add the following to your `.env` file:
 
-**Use your preferred IDE**
+```env
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+📊 Sample Output
+Compliance score: 20%
+   Non-compliant rules include:
+   Aisle clutter
+   Improper product placement
+   Empty shelves
+   Display violations
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+PDF report summarizes rule category violations and provides improvement tips.
 
-Follow these steps:
+📌 Technologies Used
+   
+   React + Vite (Frontend)
+   Google Gemini Pro Vision API
+   YAML (for dynamic rule definition)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+📥 Future Enhancements
+   Add user login/authentication
+   Track compliance history over time
+   Interactive heatmap for visual violations
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f4788ae3-b7e2-42e7-9986-6e0c1fcef7be) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)

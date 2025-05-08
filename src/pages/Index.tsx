@@ -109,7 +109,7 @@ const Index = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            AI-Powered Retail Compliance
+            AI-Powered Grocery Store Compliance Validator
           </motion.h1>
           <motion.p 
             className="text-xl max-w-2xl mx-auto mb-4 text-blue-50"
