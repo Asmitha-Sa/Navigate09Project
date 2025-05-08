@@ -80,6 +80,93 @@ const rules: Rule[] = [
       "Entrance mats must be flat and clean.",
       "Waste bins must not be overflowing."
     ]
+  },
+  {
+    id: 6,
+    name: "Other General Rules",
+    description: [
+      "No unauthorized persons in staff-only zones.",
+      "Security cameras must not be blocked.",
+      "Lighting must be adequate and all bulbs functional.",
+      "Ceiling panels must be intact (no water damage/stains).",
+      "Store branding (logo, slogan) must be clean and visible.",
+      "No handwritten correction over printed price tags.",
+      "Shopping baskets must be clean and stacked in racks.",
+      "Trolley area must be organized."
+    ]
+  },
+  {
+    id: 7,
+    name: "Product Placement Rules",
+    description: [
+      "Milk must be placed in the refrigerated section.",
+      "Frozen foods must be in freezers only.",
+      "Non-edible items (e.g., cleaning products) must not be near food items.",
+      "Eggs must be kept in a temperature-controlled display.",
+      "Alcoholic beverages must be placed in designated areas only.",
+      "Children's products (e.g., toys) must not be placed near alcohol."
+    ]
+  },
+  {
+    id: 8,
+    name: "Refrigerator/Freezer Rules",
+    description: [
+      "Refrigerator doors must be closed.",
+      "Frost or ice buildup should not be visible.",
+      "No condensation puddles under refrigerators.",
+      "Items must be within the max/min temperature limits."
+    ]
+  },
+  {
+    id: 9,
+    name: "Safety & Accessibility Rules",
+    description: [
+      "Fire exits must be unobstructed.",
+      "Emergency signage must be clearly visible.",
+      "No items stacked above head height.",
+      "Accessibility ramps must not be blocked.",
+      "No wet floor without a warning sign.",
+      "Electrical panels must not be blocked."
+    ]
+  },
+  {
+    id: 10,
+    name: "Shelf Stocking Rules",
+    description: [
+      "Shelves must not be empty.",
+      "Products must face forward (front-facing visibility).",
+      "No expired products on shelves.",
+      "Products must be aligned and not tilted.",
+      "Price tags must be present and aligned with products.",
+      "No gaps between product facings.",
+      "No mixed products in a single facing row.",
+      "Overhanging products are not allowed.",
+      "Top shelf must not exceed maximum load limit.",
+      "Bottom shelves must not have items on the floor beneath them.",
+      "Promotional products must be tagged clearly.",
+      "Products must match the store's planogram.",
+      "No double stacking unless specified."
+    ]
+  },
+  {
+    id: 11,
+    name: "Staff Behavior Rules",
+    description: [
+      "Staff must wear uniform or ID badge.",
+      "Staff must not be eating on the floor.",
+      "No sleeping or resting in product aisles.",
+      "Mobile phone usage must be in break zones only."
+    ]
+  },
+  {
+    id: 12,
+    name: "Warehouse/Backroom Rules",
+    description: [
+      "No clutter in the delivery area.",
+      "Products must not be stored on the ground.",
+      "Pallets must be stacked safely.",
+      "No expired inventory mixed with fresh stock."
+    ]
   }
 ];
 

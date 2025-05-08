@@ -111,4 +111,30 @@
   .retail-gradient {
     @apply bg-gradient-to-r from-retail-blue to-retail-gray text-white;
   }
+
+  /* Gemini AI specific styling */
+  .gemini-badge {
+    @apply bg-blue-900 text-white text-xs px-2 py-0.5 rounded-md flex items-center;
+  }
+  
+  .gemini-sparkle {
+    @apply text-blue-200 animate-pulse;
+  }
+
+  .shimmer {
+    @apply bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer bg-[length:400%_100%];
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
 }

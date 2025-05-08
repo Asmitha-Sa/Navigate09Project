@@ -2,24 +2,35 @@
 import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Upload, Image as ImageIcon } from 'lucide-react';
+import { Upload, Image as ImageIcon, AlertCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface UploadSectionProps {
   onUpload: (image: File) => void;
+  onAnalyze: () => void;
   isLoading: boolean;
+  hasImage: boolean;
 }
 
-const UploadSection: React.FC<UploadSectionProps> = ({ onUpload, isLoading }) => {
+const UploadSection: React.FC<UploadSectionProps> = ({ onUpload, onAnalyze, isLoading, hasImage }) => {
   const [preview, setPreview] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (file: File | null) => {
+    setError(null);
     if (!file) return;
     
     // Check if file is an image
     if (!file.type.match('image.*')) {
-      alert('Please upload an image file');
+      setError('Please upload an image file (JPEG, PNG, etc.)');
+      return;
+    }
+    
+    // Check file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      setError('Image size must be less than 10MB');
       return;
     }
     
@@ -88,6 +99,13 @@ const UploadSection: React.FC<UploadSectionProps> = ({ onUpload, isLoading }) =>
                   onChange={(e) => handleFileChange(e.target.files ? e.target.files[0] : null)}
                 />
                 
+                {error && (
+                  <div className="text-center text-red-500 mb-4 flex items-center justify-center">
+                    <AlertCircle className="h-5 w-5 mr-2" />
+                    <span>{error}</span>
+                  </div>
+                )}
+                
                 {preview ? (
                   <div className="flex flex-col items-center">
                     <img 
@@ -108,25 +126,35 @@ const UploadSection: React.FC<UploadSectionProps> = ({ onUpload, isLoading }) =>
                 )}
               </div>
               
-              <div className="mt-6">
-                <Button 
-                  className="w-full bg-retail-blue hover:bg-blue-800"
-                  disabled={!preview || isLoading}
-                  onClick={() => {}}
+              {hasImage && (
+                <motion.div 
+                  className="mt-6"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {isLoading ? (
-                    <span className="flex items-center">
-                      <span className="animate-spin mr-2">⚙️</span> 
-                      Analyzing Image...
-                    </span>
-                  ) : (
-                    <span className="flex items-center">
-                      <Upload className="mr-2 h-4 w-4" /> 
-                      Verify Compliance
-                    </span>
-                  )}
-                </Button>
-              </div>
+                  <Button 
+                    className="w-full bg-retail-blue hover:bg-blue-800 py-6 text-lg"
+                    disabled={isLoading}
+                    onClick={onAnalyze}
+                  >
+                    {isLoading ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Analyzing with Gemini AI...
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center">
+                        <Upload className="mr-2 h-5 w-5" /> 
+                        Analyze Compliance with Gemini AI
+                      </span>
+                    )}
+                  </Button>
+                </motion.div>
+              )}
             </CardContent>
           </Card>
         </div>

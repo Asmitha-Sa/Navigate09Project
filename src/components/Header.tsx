@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Store } from 'lucide-react';
+import { Store, Sparkles } from 'lucide-react';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
 
@@ -22,7 +22,10 @@ const Header = () => {
           </motion.div>
           <div>
             <h1 className="text-xl font-bold">AI Retail Compliance Validator</h1>
-            <p className="text-xs text-blue-100">Powered by Gemini AI</p>
+            <div className="flex items-center text-xs text-blue-100">
+              <Sparkles className="h-3 w-3 mr-1" />
+              <p>Powered by Google Gemini AI</p>
+            </div>
           </div>
         </div>
         <nav className="hidden md:flex items-center space-x-6">

@@ -11,6 +11,7 @@ import { analyzeImage } from '@/utils/geminiService';
 import { toast } from '@/components/ui/sonner';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { RocketIcon } from 'lucide-react';
 
 interface ComplianceIssue {
   rule: string;
@@ -36,6 +37,7 @@ const Index = () => {
   const handleImageUpload = (image: File) => {
     setCurrentImage(image);
     setHasResults(false);
+    setComplianceResults(null);
   };
 
   const handleAnalyzeImage = async () => {
@@ -52,6 +54,7 @@ const Index = () => {
         document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
       
+      // Real API call to Gemini
       const results = await analyzeImage(currentImage);
       setComplianceResults(results);
       setHasResults(true);
@@ -109,12 +112,20 @@ const Index = () => {
             AI-Powered Retail Compliance
           </motion.h1>
           <motion.p 
-            className="text-xl max-w-2xl mx-auto mb-8 text-blue-50"
+            className="text-xl max-w-2xl mx-auto mb-4 text-blue-50"
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             Upload store images to instantly validate compliance with industry standards
+          </motion.p>
+          <motion.p 
+            className="text-md max-w-xl mx-auto mb-8 text-blue-100"
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            Powered by Google Gemini AI for detailed compliance analysis across 12 rule categories
           </motion.p>
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -137,6 +148,7 @@ const Index = () => {
               className="bg-white text-retail-blue hover:bg-gray-100"
               onClick={() => document.getElementById('upload')?.scrollIntoView({ behavior: 'smooth' })}
             >
+              <RocketIcon className="mr-2 h-4 w-4" />
               Get Started
             </Button>
           </motion.div>
@@ -154,29 +166,11 @@ const Index = () => {
             <motion.div variants={itemVariants}>
               <UploadSection 
                 onUpload={handleImageUpload} 
-                isLoading={isAnalyzing} 
+                onAnalyze={handleAnalyzeImage}
+                isLoading={isAnalyzing}
+                hasImage={!!currentImage}
               />
             </motion.div>
-            
-            {/* Analysis Button Section */}
-            {currentImage && !isAnalyzing && (
-              <motion.div 
-                className="container mx-auto px-4 max-w-3xl -mt-6 mb-12"
-                variants={itemVariants}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Button 
-                    className="w-full bg-retail-blue hover:bg-blue-800 py-6"
-                    onClick={handleAnalyzeImage}
-                  >
-                    Analyze Compliance Now
-                  </Button>
-                </motion.div>
-              </motion.div>
-            )}
             
             <motion.div variants={itemVariants}>
               <ResultsSection 
@@ -208,7 +202,7 @@ const Index = () => {
             <div className="bg-gray-50 max-w-lg mx-auto p-8 rounded-lg shadow-sm">
               <h2 className="text-2xl font-bold mb-4">Sign In to Access</h2>
               <p className="mb-6 text-gray-600">
-                Please sign in to upload and analyze retail compliance images.
+                Please sign in to upload and analyze retail compliance images with Gemini AI.
               </p>
               <SignInButton>
                 <Button className="bg-retail-blue hover:bg-blue-800">
@@ -224,7 +218,7 @@ const Index = () => {
       <footer className="bg-retail-dark text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
-            AI Retail Compliance Validator | Powered by Gemini Flash 2.0
+            AI Retail Compliance Validator | Powered by Gemini AI
           </p>
           <p className="text-xs mt-2 text-gray-400">
             © {new Date().getFullYear()} Retail Compliance Technologies
