@@ -36,12 +36,6 @@ Create a `.env` file in the root of the project and add the following:
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_authentication_api_key
 ````
-
----
-
-## 🚀 Quick Start
-Thanks for the screenshot! I see the issue—your Markdown code block isn't closed and the commands aren’t separated properly, which breaks the formatting. Here's the corrected and improved version of the **Quick Start** section:
-
 ---
 
 ## 🚀 Quick Start
