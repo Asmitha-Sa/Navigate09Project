@@ -5,7 +5,7 @@ A web-based AI solution to instantly evaluate supermarket and grocery store imag
 ## 🌟 Features
 
 - 🔍 Upload grocery store images to validate compliance
-- 🧠 AI-powered analysis using Google Gemini Pro Vision
+- 🧠 AI-powered analysis using Gemini 1.5 Flash
 - 📊 Generates compliance score and detailed rule-based insights
 - 📝 Visual and textual summary of violations
 - 📄 Downloadable PDF compliance report
