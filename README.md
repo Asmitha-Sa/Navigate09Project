@@ -42,19 +42,17 @@ VITE_CLERK_PUBLISHABLE_KEY=your_clerk_authentication_api_key
 
 Copy and paste the commands below to install dependencies and run the project locally:
 
-```bash
 # Clone the repo (if needed)
-# git clone https://github.com/your-username/your-repo-name.git
-# cd your-repo-name
-```
-
 ```bash
+# git clone https://github.com/Asmitha-Sa/Navigate09Project
+# cd Navigate09Project
+```
 # Install dependencies
+```bash
 npm install
 ```
-
-```bash
 # Start development server
+```bash
 npm run dev
 ```
 
