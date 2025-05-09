@@ -55,7 +55,6 @@ PDF report summarizes rule category violations and provides improvement tips.
    YAML (for dynamic rule definition)
 
 📥 Future Enhancements
-   Add user login/authentication
    Track compliance history over time
    Interactive heatmap for visual violations
 
