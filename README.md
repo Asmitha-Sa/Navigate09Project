@@ -31,6 +31,12 @@ Add the following to your `.env` file:
 
 ```env
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_authentication_api_key
+
+How to Run:
+Navigate to project folder in terminal 
+npm install
+npm run dev 
 
 📊 Sample Output
 Compliance score: 20%
