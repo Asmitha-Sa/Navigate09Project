@@ -40,6 +40,11 @@ VITE_CLERK_PUBLISHABLE_KEY=your_clerk_authentication_api_key
 ---
 
 ## 🚀 Quick Start
+Thanks for the screenshot! I see the issue—your Markdown code block isn't closed and the commands aren’t separated properly, which breaks the formatting. Here's the corrected and improved version of the **Quick Start** section:
+
+---
+
+## 🚀 Quick Start
 
 Copy and paste the commands below to install dependencies and run the project locally:
 
@@ -47,9 +52,13 @@ Copy and paste the commands below to install dependencies and run the project lo
 # Clone the repo (if needed)
 # git clone https://github.com/your-username/your-repo-name.git
 # cd your-repo-name
+```
+
 ```bash
 # Install dependencies
 npm install
+```
+
 ```bash
 # Start development server
 npm run dev
