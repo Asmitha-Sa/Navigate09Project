@@ -47,10 +47,10 @@ Copy and paste the commands below to install dependencies and run the project lo
 # Clone the repo (if needed)
 # git clone https://github.com/your-username/your-repo-name.git
 # cd your-repo-name
-
+```bash
 # Install dependencies
 npm install
-
+```bash
 # Start development server
 npm run dev
 ```
@@ -76,7 +76,6 @@ The PDF report summarizes rule category violations and provides improvement tips
 
 * React + Vite (Frontend)
 * Google Gemini Pro Vision API
-* YAML (for dynamic rule definition)
 
 ---
 
@@ -87,5 +86,4 @@ The PDF report summarizes rule category violations and provides improvement tips
 
 ```
 
-This version is ready to be directly copied into your README file. Let me know if you need any further changes or additions!
-```
+
