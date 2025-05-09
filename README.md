@@ -85,6 +85,5 @@ The PDF report summarizes rule category violations and provides improvement tips
 * Track compliance history over time
 * Interactive heatmap for visual violations
 
-```
 
 
