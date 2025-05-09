@@ -17,7 +17,7 @@ A web-based AI solution to instantly evaluate supermarket and grocery store imag
 1. Upload a grocery store image.
 2. Click **"Analyze Compliance with Gemini AI"**.
 3. The app checks the image against 12 predefined retail rules (from a `rules.yaml` file).
-4. Violations are detected using both Gemini AI and object detection (YOLOv5 via Roboflow).
+4. Violations are detected using both Gemini AI.
 5. A compliance report is generated with:
    - Compliance status
    - Key violations
