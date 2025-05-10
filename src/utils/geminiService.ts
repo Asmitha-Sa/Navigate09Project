@@ -1,4 +1,4 @@
-
+"
 // Define types
 interface ComplianceIssue {
   rule: string;
@@ -15,7 +15,7 @@ interface ComplianceResult {
 }
 
 // Use the provided API key for Gemini
-const API_KEY = "Paste you api key here";
+const API_KEY = 'Paste your GEMINI_API_KEY here";
 // Update to the new API endpoint and model
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
@@ -361,36 +361,36 @@ const getRules = () => {
 
 // Create analysis prompt for Gemini
 const createAnalysisPrompt = (rules: any[]) => {
-  let prompt = `
-Analyze this retail store image for compliance with these rules:
+  let prompt = `You are an AI compliance validator for retail store images.
 
+Analyze the given store image based on the following rules. For each rule, identify any violations or confirm compliance. Provide a structured JSON response strictly in the following format:
+
+{
+  "overallStatus": "compliant" | "non-compliant" | "partial",
+  "score": number,
+  "issues": [
+    {
+      "rule": string,
+      "description": string,
+      "status": "pass" | "fail" | "warning",
+      "details": string
+    }
+  ],
+  "summary": string
+}
+
+Rules for compliance analysis:
 `;
 
   rules.forEach(rule => {
-    prompt += `${rule.id}: ${rule.name}\n`;
+    prompt += `\n${rule.id}: ${rule.name}\n`;
     rule.description.forEach((desc: string) => {
       prompt += `- ${desc}\n`;
     });
-    prompt += '\n';
   });
 
   prompt += `
-Analyze the image to determine if the retail store is compliant with these rules.
-Return your response in the following JSON format ONLY (no additional text before or after):
-{
-  "overallStatus": "compliant" | "non-compliant" | "partial",
-  "score": <percentage as number between 0-100>,
-  "issues": [
-    {
-      "rule": "<rule category>",
-      "description": "<specific rule>",
-      "status": "pass" | "fail" | "warning",
-      "details": "<explanation>"
-    }
-  ],
-  "summary": "<general overview of compliance>"
-}
-`;
+Again, respond strictly in valid JSON. Do not include any explanation or markdown, just the JSON output.`;
 
   return prompt;
 };
