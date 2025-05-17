@@ -76,7 +76,7 @@ The PDF report summarizes rule category violations and provides improvement tips
 ## 📌 Technologies Used
 
 * React + Vite (Frontend)
-* Google Gemini Pro Vision API
+* Google Gemini 1.5 Flash
 
 ---
 
